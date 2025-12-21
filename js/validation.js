@@ -46,13 +46,13 @@ const checkUniqueHashtag = (value) => {
 pristine.addValidator(
   hashtagsTag,
   checkHashtags,
-  'вы ввели не допустимые символы'
+  'Вы ввели не допустимые символы'
 );
 
 pristine.addValidator(
   hashtagsTag,
   checkHashtagsCount,
-  `количество хештегов не должно привыщвть ${MAX_HASHTAG_COUNT}`
+  `Количество хештегов не должно превышать ${MAX_HASHTAG_COUNT}`
 );
 
 pristine.addValidator(
