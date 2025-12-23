@@ -2,6 +2,98 @@ export const STEP_COMMENTS = 5;
 export const MAX_DESCRIPTION = 140;
 export const HASHTAG_FORMULA = /^#[a-zа-я0-9]{1,19}$/i;
 export const MAX_HASHTAG_COUNT = 5;
+export const Scale = {
+  MIN: 25,
+  MAX: 100,
+  STEP: 25,
+  DEFAULT: 100
+};
+
+export const Effects = {
+  NONE: 'none',
+  CHROME: 'chrome',
+  SEPIA: 'sepia',
+  MARVIN: 'marvin',
+  PHOBOS: 'phobos',
+  HEAT: 'heat'
+};
+
+/*
+Для эффекта «Хром» — filter: grayscale(0..1) с шагом 0.1;
+Для эффекта «Сепия» — filter: sepia(0..1) с шагом 0.1;
+Для эффекта «Марвин» — filter: invert(0..100%) с шагом 1%;
+Для эффекта «Фобос» — filter: blur(0..3px) с шагом 0.1px;
+Для эффекта «Зной» — filter: brightness(1..3) с шагом 0.1;
+*/
+export const EffectSettings = {
+  [Effects.CHROME]: {
+    range: {
+      min: 0,
+      max: 1,
+    },
+    start: 1,
+    step: 0.1,
+    style: 'grayscale',
+    units: ''
+  },
+
+  [Effects.NONE]: {
+    range: {
+      min: 0,
+      max: 1,
+    },
+    start: 1,
+    step: 0.1,
+    style: '',
+    units: ''
+  },
+
+
+  [Effects.SEPIA]: {
+    range: {
+      min: 0,
+      max: 1,
+    },
+    start: 1,
+    step: 0.1,
+    style: 'sepia',
+    units: ''
+  },
+
+  [Effects.MARVIN]: {
+    range: {
+      min: 0,
+      max: 100,
+    },
+    start: 100,
+    step: 1,
+    style: 'invert',
+    units: '%'
+  },
+
+  [Effects.PHOBOS]: {
+    range: {
+      min: 0,
+      max: 3,
+    },
+    start: 3,
+    step: 0.1,
+    style: 'blur',
+    units: 'px'
+  },
+
+  [Effects.HEAT]: {
+    range: {
+      min: 1,
+      max: 3,
+    },
+    start: 3,
+    step: 0.1,
+    style: 'brightness',
+    units: ''
+  },
+};
+
 
 const DESCRIPTIONS = [
   'Вид на пляж отеля',
@@ -77,3 +169,4 @@ const COMMENTS_MAX_ID = 30000;
 const CADRS_AMOUNT = 25;
 
 export { DESCRIPTIONS, MESSAGES_TEXT, AVTOR_NAMES, LIKES_MIN_AMOUNT, LIKES_MAX_AMOUNT, AVATAR_ID_MIN_, AVATAR_ID_MAX, COMMENTS_MIN_AMOUNT, COMMENTS_MAX_AMOUNT, COMMENTS_MAX_ID, CADRS_AMOUNT };
+
